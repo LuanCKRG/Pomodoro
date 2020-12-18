@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro | CKRG</title>
+  </head>
+
+  <body>
+      <span id='pom'>25:00</span>
+      <div>
+          <button type="button" id='start'>Começar</button>
+      </div>
+  </body>
+
+  <script>
+      const Pom_Box = document.querySelector('#pom')
+      const Começar = document.querySelector('#start')
+      Começar.addEventListener('click', Start)
+
+      var Pomo
+      var Minuto = 25
+      var Segundo = 00
+      
+      function Timer(){
+        Segundo--
+        if(Segundo < 0){
+            Segundo = 59
+            Minuto--
+        }
+        document.querySelector('#pom').innerText = (`${Formatador(Minuto)}:${Formatador(Segundo)}`)
+      }
+
+      function Start(){
+        clearInterval(Pomo)
+        Pomo = setInterval(Timer, 1000)
+      }
+
+      function Formatador(input){
+          return (input < 10)? (`0${input}`):(input)
+      }
+  </script>
+</html>
