@@ -1,0 +1,52 @@
+body{
+    background-color: #914691;
+}
+#resetar{
+    display: none;
+}
+#pause{
+    display: none;
+}
+#titulo{
+    font-family: 'Varela Round', Arial;
+    font-size: 6.5rem;
+    margin-bottom: 17.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #4d354d;
+}
+#Main_Box{
+    font-family: 'Varela Round', Arial;
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#pom{
+    color: #4d354d;
+    background-color: #a775a7;
+    font-size: 9rem;
+    border-radius: 5rem;
+    border: solid;
+    padding: 4rem;
+}
+button{
+    color: #4d354d;
+    font-size: 25px; 
+    padding: 7.5px 12.5px 7.5px 12.5px;
+    margin: 2.5rem;
+    font-family: 'Varela Round', Arial;
+    background: #a775a7;
+    border-radius: 12px;
+    border: solid 2.95px;
+    border-color: #4d354d;
+    outline: none;
+    opacity: 0.4;
+}
+button:hover{
+    opacity: 1;
+}
