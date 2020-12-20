@@ -3,41 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
     <title>Pomodoro | CKRG</title>
   </head>
 
   <body>
-      <span id='pom'>25:00</span>
-      <div>
-          <button type="button" id='start'>Começar</button>
-      </div>
+    <h1 id="titulo">Pomodoro</h1>
+
+    <div id='Main_Box'>
+      <span id="pom">25:00</span>
+
+      <span id="#Buttons_Box">
+        <button type="button" id="pause">Pausar</button>
+        <button type="button" id="start">Começar</button>
+        <button type="button" id="resetar">Resetar</button>
+      </span>
+    </div>
   </body>
 
-  <script>
-      const Pom_Box = document.querySelector('#pom')
-      const Começar = document.querySelector('#start')
-      Começar.addEventListener('click', Start)
-
-      var Pomo
-      var Minuto = 25
-      var Segundo = 00
-      
-      function Timer(){
-        Segundo--
-        if(Segundo < 0){
-            Segundo = 59
-            Minuto--
-        }
-        document.querySelector('#pom').innerText = (`${Formatador(Minuto)}:${Formatador(Segundo)}`)
-      }
-
-      function Start(){
-        clearInterval(Pomo)
-        Pomo = setInterval(Timer, 1000)
-      }
-
-      function Formatador(input){
-          return (input < 10)? (`0${input}`):(input)
-      }
-  </script>
+  <script src='./script.js'></script>
 </html>
