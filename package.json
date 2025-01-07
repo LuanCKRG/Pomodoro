@@ -1,0 +1,17 @@
+{
+  "name": "pomodoro",
+  "version": "1.1.0",
+  "description": "Uma técnica de gestão de tempo usada para a otimização do foco, usando o básico do Front-End(HTMl, JavaScript e CSS)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LuanCK",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "pomodoro": "file:"
+  }
+}
