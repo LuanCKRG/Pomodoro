@@ -1,0 +1,9 @@
+.hidden_button {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hidden_button {
+    display: inline-flex;
+  }
+}
