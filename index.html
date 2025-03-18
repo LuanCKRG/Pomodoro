@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/style.css">
+    <title>Pomodoro | CKRG</title>
+  </head>
+
+  <body>
+    <header class="flex justify-center shadow-2xl">
+      <h1 class="text-2xl">Pomodoro</h1>
+    </header>
+    
+    <div class="bg-slate-300 max-w-[600px] mx-auto flex justify-center items-center rounded-xl mt-10 p-4">
+      <div class="flex flex-col items-center gap-y-4">
+        <div class="">
+          <button class="px-3 bg-slate-100 text-lg" type="button" id="pause">Pomodoro</button>
+          <button class="px-3 bg-slate-100 text-lg" type="button" >Short <span class="hidden sm:inline">Break</span></button>
+          <button class="px-3 bg-slate-100 text-lg" type="button" id="reset">Long <span class="hidden sm:inline">Break</span></button>
+        </div>
+        
+        <time class="text-7xl mx-auto" id="timer-display">25:00</time>
+
+          <button type="button" id="start" class="py-1 px-6 bg-slate-100 text-xl font-semibold cursor-pointer border-b-4 border-slate-200 rounded-md translate-y-1">
+            Start
+          </button>
+      </div>
+    </div>
+
+    <!-- <div id='Main_Box'>
+
+      <div id="#Buttons_Box">
+        <button type="button" id="pause">Pausar</button>
+        <button type="button" id="start">Começar</button>
+        <button type="button" id="resetar">Resetar</button>
+      </div>
+    </div> -->
+  </body>
+
+  <script src="./dist/scripts/script.js"></script>
+</html>
