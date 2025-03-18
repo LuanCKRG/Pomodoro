@@ -4,12 +4,16 @@
   "description": "Uma técnica de gestão de tempo usada para a otimização do foco, usando o básico do Front-End(HTMl, JavaScript e CSS)",
   "main": "script.js",
   "scripts": {
+    "dev": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "LuanCK",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "@types/node": "^22.13.10",
+    "typescript": "^5.7.2",
+    "vite": "^6.2.2"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.14",
