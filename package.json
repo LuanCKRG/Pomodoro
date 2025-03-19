@@ -16,7 +16,6 @@
     "vite": "^6.2.2"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.14",
     "@tailwindcss/vite": "^4.0.14",
     "pomodoro": "file:",
     "tailwindcss": "^4.0.14"
