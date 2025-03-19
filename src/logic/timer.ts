@@ -23,3 +23,11 @@ export function startTimer() {
     }, 1000)
   }
 }
+
+
+export function stopTimer() {
+  if (intervalId) {
+    clearInterval(intervalId)
+    intervalId = null
+  }
+}
