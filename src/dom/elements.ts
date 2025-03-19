@@ -4,4 +4,6 @@ const longBreakButton = document.querySelector("#long-break") as HTMLButtonEleme
 
 const timerDisplay = document.querySelector("#timer-display") as HTMLTimeElement
 
-export { pomodoroButton, shortBreakButton, longBreakButton, timerDisplay }
+const startTimerButton = document.querySelector("#start-timer") as HTMLButtonElement
+
+export { pomodoroButton, shortBreakButton, longBreakButton, timerDisplay, startTimerButton }
