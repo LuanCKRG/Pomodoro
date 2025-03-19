@@ -1,6 +1,6 @@
 import { updateTimerDisplay } from "@/utils/format"
 import { timerDisplay } from "@/dom/elements"
-import { timer } from "./cycle"
+import { timer } from "@/logic/cycle"
 
 let intervalId: ReturnType<typeof setInterval> | null = null
 
