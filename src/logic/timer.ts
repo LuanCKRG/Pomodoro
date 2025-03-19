@@ -9,8 +9,7 @@ export function startTimer() {
     intervalId = setInterval(() => {
       if (timer.seconds === 0) {
         if (timer.minutes === 0) {
-          clearInterval(intervalId!)
-          intervalId = null
+          stopTimer()
           return
         }
         timer.seconds = 59
