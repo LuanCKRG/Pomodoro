@@ -2,7 +2,7 @@ import { updateTimerDisplay } from "@/utils/format"
 import { timerDisplay } from "@/dom/elements"
 import { timer } from "./cycle"
 
-let intervalId: number | null = null
+let intervalId: ReturnType<typeof setInterval> | null = null
 
 export function startTimer() {
   if (timer.seconds === 0) {
