@@ -2,6 +2,7 @@ import { CyclePhase, TimerType } from "@/types"
 import { updateTimerDisplay } from "@/utils/format"
 import { timerDisplay } from "@/dom/elements"
 import { stopTimer } from "./timer"
+import { showStartTimerButton } from "@/dom/ui"
 
 export const timer: TimerType = {
   minutes: 25,
@@ -27,6 +28,7 @@ export function handleCyclePhase(newPhase: CyclePhase) {
   }
   
   stopTimer()
+  showStartTimerButton()
   updateTimerDisplay(timerDisplay, timer.minutes, timer.seconds)
 }
 
