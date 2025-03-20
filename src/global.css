@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.active-cycle-button {
+  @apply bg-neutral-700 font-semibold;
+}
