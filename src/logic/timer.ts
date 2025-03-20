@@ -23,7 +23,6 @@ export function startTimer() {
   }
 }
 
-
 export function stopTimer() {
   if (intervalId) {
     clearInterval(intervalId)
