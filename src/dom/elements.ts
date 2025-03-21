@@ -7,4 +7,6 @@ const timerDisplay = document.querySelector("#timer-display") as HTMLTimeElement
 const startTimerButton = document.querySelector("#start-timer") as HTMLButtonElement
 const pauseTimerButton = document.querySelector("#pause-timer") as HTMLButtonElement
 
-export { pomodoroButton, shortBreakButton, longBreakButton, timerDisplay, startTimerButton, pauseTimerButton }
+const rootElement = document.documentElement as HTMLElement
+
+export { pomodoroButton, shortBreakButton, longBreakButton, timerDisplay, startTimerButton, pauseTimerButton, rootElement }
