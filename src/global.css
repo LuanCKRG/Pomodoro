@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 [data-theme="red"] {
-  --color-primary: #BA4949;
+  --color-primary: #ba4949;
 }
 
 [data-theme="light-blue"] {
-  --color-primary: #38858A;
+  --color-primary: #38858a;
 }
 
 [data-theme="dark-blue"] {
-  --color-primary: #3b82f6;
+	--color-primary: #3b82f6;
 }
 
 .bg-primary {
-  background-color: var(--color-primary);
+	background-color: var(--color-primary);
 }
 
 .active-cycle-button {
-  @apply bg-black/15 font-semibold rounded-sm;
+	@apply bg-black/15 font-semibold rounded-sm;
 }

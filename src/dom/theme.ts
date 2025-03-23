@@ -1,9 +1,9 @@
 import { rootElement } from "@/dom/elements"
 
 export function handleTheme(newTheme: "red" | "light-blue" | "dark-blue") {
-  const currentTheme = rootElement.getAttribute("data-theme")
+	const currentTheme = rootElement.getAttribute("data-theme")
 
-  if (currentTheme === newTheme) return
+	if (currentTheme === newTheme) return
 
-  rootElement.setAttribute("data-theme", newTheme)
+	rootElement.setAttribute("data-theme", newTheme)
 }

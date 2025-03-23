@@ -1,29 +1,29 @@
-import { handleCyclePhase } from "@/logic/cycle"
-import { CyclePhase } from "@/types"
-import { pomodoroButton, shortBreakButton, longBreakButton, startTimerButton, pauseTimerButton } from "@/dom/elements"
-import {startTimer, stopTimer}  from "@/logic/timer"
-import { showStartTimerButton, showStopTimerButton } from "@/dom/ui"
+import { longBreakButton, pauseTimerButton, pomodoroButton, shortBreakButton, startTimerButton } from "@/dom/elements"
 import { handleTheme } from "@/dom/theme"
+import { showStartTimerButton, showStopTimerButton } from "@/dom/ui"
+import { handleCyclePhase } from "@/logic/cycle"
+import { startTimer, stopTimer } from "@/logic/timer"
+import { CyclePhase } from "@/types"
 
 pomodoroButton.addEventListener("click", () => {
-  handleCyclePhase(CyclePhase.pomodoro)
-  handleTheme("red")
+	handleCyclePhase(CyclePhase.pomodoro)
+	handleTheme("red")
 })
 shortBreakButton.addEventListener("click", () => {
-  handleCyclePhase(CyclePhase.shortBreak)
-  handleTheme("light-blue")
+	handleCyclePhase(CyclePhase.shortBreak)
+	handleTheme("light-blue")
 })
 longBreakButton.addEventListener("click", () => {
-  handleCyclePhase(CyclePhase.longBreak)
-  handleTheme("dark-blue")
+	handleCyclePhase(CyclePhase.longBreak)
+	handleTheme("dark-blue")
 })
 
 startTimerButton.addEventListener("click", () => {
-  startTimer()
-  showStopTimerButton()
+	startTimer()
+	showStopTimerButton()
 })
 
 pauseTimerButton.addEventListener("click", () => {
-  stopTimer()
-  showStartTimerButton()
+	stopTimer()
+	showStartTimerButton()
 })
