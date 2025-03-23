@@ -6,8 +6,8 @@ import { CyclePhase, type TimerType } from "@/types"
 import { updateTimerDisplay } from "@/utils/format"
 
 export let currentCyclePhase: CyclePhase = CyclePhase.pomodoro
-export let pomodoroCount: number = 0
-export let shortBreakCount: number = 0
+export let pomodoroCount = 0
+export let shortBreakCount = 0
 
 const phaseDurations = {
 	[CyclePhase.pomodoro]: 25,
