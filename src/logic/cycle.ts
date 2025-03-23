@@ -1,15 +1,13 @@
 import { timerDisplay } from "@/dom/elements"
+import { handleTheme } from "@/dom/theme"
 import { showStartTimerButton, updateActiveCycleButton } from "@/dom/ui"
 import { stopTimer } from "@/logic/timer"
 import { CyclePhase, type TimerType } from "@/types"
 import { updateTimerDisplay } from "@/utils/format"
 
-export const timer: TimerType = {
-	minutes: 25,
-	seconds: 0
-}
-
 export let currentCyclePhase: CyclePhase = CyclePhase.pomodoro
+export let pomodoroCount: number = 0
+export let shortBreakCount: number = 0
 
 const phaseDurations = {
 	[CyclePhase.pomodoro]: 25,
@@ -17,8 +15,16 @@ const phaseDurations = {
 	[CyclePhase.longBreak]: 15
 }
 
+export const timer: TimerType = {
+	minutes: phaseDurations[CyclePhase.pomodoro],
+	seconds: 0
+}
+
 export function handleCyclePhase(newPhase: CyclePhase) {
 	if (newPhase === currentCyclePhase) return
+
+	stopTimer()
+	showStartTimerButton()
 
 	timer.seconds = 0
 
@@ -27,15 +33,23 @@ export function handleCyclePhase(newPhase: CyclePhase) {
 		currentCyclePhase = newPhase
 	}
 
-	stopTimer()
-	showStartTimerButton()
 	updateTimerDisplay(timerDisplay, timer.minutes, timer.seconds)
 	updateActiveCycleButton(currentCyclePhase)
+	handleTheme(newPhase)
 }
 
-export function resetCycle() {
-	stopTimer()
-	timer.minutes = phaseDurations[currentCyclePhase]
-	timer.seconds = 0
-	updateTimerDisplay(timerDisplay, timer.minutes, timer.seconds)
+export function nextPhase() {
+	if (currentCyclePhase === CyclePhase.pomodoro) {
+		pomodoroCount++ // Contabiliza o Pomodoro concluído
+
+		if (shortBreakCount === 3) {
+			handleCyclePhase(CyclePhase.longBreak)
+			shortBreakCount = 0 // Reseta os short breaks após um long break
+		} else {
+			handleCyclePhase(CyclePhase.shortBreak)
+			shortBreakCount++
+		}
+	} else {
+		handleCyclePhase(CyclePhase.pomodoro)
+	}
 }
