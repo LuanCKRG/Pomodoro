@@ -7,15 +7,12 @@ import { CyclePhase } from "@/types"
 
 pomodoroButton.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.pomodoro)
-	handleTheme("red")
 })
 shortBreakButton.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.shortBreak)
-	handleTheme("light-blue")
 })
 longBreakButton.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.longBreak)
-	handleTheme("dark-blue")
 })
 
 startTimerButton.addEventListener("click", () => {
