@@ -19,3 +19,7 @@
 .active-cycle-button {
 	@apply bg-black/15 font-semibold rounded-sm;
 }
+
+button {
+	@apply cursor-pointer
+}
