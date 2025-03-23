@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
-    "pomodoro": "file:",
+    "lucide": "^0.483.0",
     "tailwindcss": "^4.0.14"
   }
 }
