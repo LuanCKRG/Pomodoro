@@ -4,6 +4,11 @@ import { showStartTimerButton, showStopTimerButton } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"
 import { startTimer, stopTimer } from "@/logic/timer"
 import { CyclePhase } from "@/types"
+import { setupIcons } from "@/dom/icons"
+
+document.addEventListener("DOMContentLoaded", () => {
+	setupIcons()
+})
 
 pomodoroButton.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.pomodoro)
