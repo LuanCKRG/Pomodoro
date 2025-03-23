@@ -1,5 +1,5 @@
 import { timerDisplay } from "@/dom/elements"
-import { timer } from "@/logic/cycle"
+import { nextPhase, timer } from "@/logic/cycle"
 import { updateTimerDisplay } from "@/utils/format"
 
 let intervalId: ReturnType<typeof setInterval> | null = null
@@ -10,6 +10,7 @@ export function startTimer() {
 			if (timer.seconds === 0) {
 				if (timer.minutes === 0) {
 					stopTimer()
+					nextPhase()
 					return
 				}
 				timer.seconds = 59
