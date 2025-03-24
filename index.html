@@ -28,11 +28,13 @@
         
         <time class="text-8xl font-semibold mx-auto mt-8 mb-12" id="timer-display">25:00</time>
 
-        <button type="button" id="start-timer" class="h-12 sm:h-14 w-40 sm:w-52 bg-neutral-50 text-primary duration-1000 text-xl font-semibold uppercase border-b-6 border-neutral-400 rounded-md">
+        <button
+          type="button"
+          id="toggle-timer"
+          data-state="start"
+          class="h-12 sm:h-14 w-40 sm:w-52 bg-neutral-50 text-primary transition-[color] duration-1000 text-xl font-semibold uppercase rounded-md border-b-6 border-neutral-400"
+        >
           Start
-        </button>
-        <button type="button" id="pause-timer" class="h-12 sm:h-14 w-40 sm:w-52 bg-neutral-50 text-primary duration-1000 text-xl font-semibold uppercase rounded-md translate-y-1.5 hidden">
-          Pause
         </button>
       </div>
     </div>
