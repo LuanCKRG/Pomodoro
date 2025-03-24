@@ -1,4 +1,4 @@
-import { timerDisplay } from "@/dom/elements"
+import { timerElements } from "@/dom/elements"
 import { handleTheme } from "@/dom/theme"
 import { showStartTimerButton, updateActiveCycleButton } from "@/dom/ui"
 import { stopTimer } from "@/logic/timer"
@@ -33,7 +33,7 @@ export function handleCyclePhase(newPhase: CyclePhase) {
 		currentCyclePhase = newPhase
 	}
 
-	updateTimerDisplay(timerDisplay, timer.minutes, timer.seconds)
+	updateTimerDisplay(timerElements.display, timer.minutes, timer.seconds)
 	updateActiveCycleButton(currentCyclePhase)
 	handleTheme(newPhase)
 }
