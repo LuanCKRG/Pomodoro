@@ -1,4 +1,4 @@
-import { longBreakButton, pauseTimerButton, pomodoroButton, shortBreakButton, startTimerButton } from "@/dom/elements"
+import { timerElements, cycleButtons } from "@/dom/elements"
 import { CyclePhase } from "@/types"
 
 export function showStopTimerButton() {
@@ -12,15 +12,15 @@ export function showStartTimerButton() {
 }
 
 export function updateActiveCycleButton(currentCycle: CyclePhase) {
-	pomodoroButton.classList.remove("active-cycle-button")
-	shortBreakButton.classList.remove("active-cycle-button")
-	longBreakButton.classList.remove("active-cycle-button")
+	cycleButtons.pomodoro.classList.remove("active-cycle-button")
+	cycleButtons.shortBreak.classList.remove("active-cycle-button")
+	cycleButtons.longBreak.classList.remove("active-cycle-button")
 
 	if (currentCycle === CyclePhase.pomodoro) {
-		pomodoroButton.classList.add("active-cycle-button")
+		cycleButtons.pomodoro.classList.add("active-cycle-button")
 	} else if (currentCycle === CyclePhase.shortBreak) {
-		shortBreakButton.classList.add("active-cycle-button")
+		cycleButtons.shortBreak.classList.add("active-cycle-button")
 	} else if (currentCycle === CyclePhase.longBreak) {
-		longBreakButton.classList.add("active-cycle-button")
+		cycleButtons.longBreak.classList.add("active-cycle-button")
 	}
 }
