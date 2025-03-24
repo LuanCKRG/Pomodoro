@@ -1,12 +1,17 @@
-const pomodoroButton = document.querySelector("#pomodoro") as HTMLButtonElement
-const shortBreakButton = document.querySelector("#short-break") as HTMLButtonElement
-const longBreakButton = document.querySelector("#long-break") as HTMLButtonElement
+export const cycleButtons = {
+	pomodoro: document.querySelector("#pomodoro") as HTMLButtonElement,
+	shortBreak: document.querySelector("#short-break") as HTMLButtonElement,
+	longBreak: document.querySelector("#long-break") as HTMLButtonElement
+}
 
-const timerDisplay = document.querySelector("#timer-display") as HTMLTimeElement
+export const modal = {
+	openButton: document.querySelector("#open-config-modal") as HTMLButtonElement,
+	root: document.querySelector("#modal") as HTMLDivElement
+}
 
-const startTimerButton = document.querySelector("#start-timer") as HTMLButtonElement
-const pauseTimerButton = document.querySelector("#pause-timer") as HTMLButtonElement
+export const rootElement = document.documentElement as HTMLElement
 
-const rootElement = document.documentElement as HTMLElement
-
-export { pomodoroButton, shortBreakButton, longBreakButton, timerDisplay, startTimerButton, pauseTimerButton, rootElement }
+export const timerElements = {
+	display: document.querySelector("#timer-display") as HTMLTimeElement,
+	toggleButton: document.querySelector("#toggle-timer") as HTMLButtonElement
+}
