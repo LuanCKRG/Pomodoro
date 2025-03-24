@@ -1,30 +1,36 @@
-import { longBreakButton, pauseTimerButton, pomodoroButton, shortBreakButton, startTimerButton } from "@/dom/elements"
-import { showStartTimerButton, showStopTimerButton } from "@/dom/ui"
+import { timerElements, cycleButtons } from "@/dom/elements"
+import { setupIcons } from "@/dom/icons"
+import { showStartTimerButton, showPauseTimerButton } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"
 import { startTimer, stopTimer } from "@/logic/timer"
 import { CyclePhase } from "@/types"
-import { setupIcons } from "@/dom/icons"
 
 document.addEventListener("DOMContentLoaded", () => {
 	setupIcons()
 })
 
-pomodoroButton.addEventListener("click", () => {
+// modal.openButton.addEventListener("click", () => {
+// 	openModal()
+// })
+
+cycleButtons.pomodoro.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.pomodoro)
 })
-shortBreakButton.addEventListener("click", () => {
+cycleButtons.shortBreak.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.shortBreak)
 })
-longBreakButton.addEventListener("click", () => {
+cycleButtons.longBreak.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.longBreak)
 })
 
-startTimerButton.addEventListener("click", () => {
-	startTimer()
-	showStopTimerButton()
-})
+timerElements.toggleButton.addEventListener("click", () => {
+	const currentState = timerElements.toggleButton.dataset.state
 
-pauseTimerButton.addEventListener("click", () => {
-	stopTimer()
-	showStartTimerButton()
+	if (currentState === "pause") {
+		stopTimer()
+		showStartTimerButton()
+	} else if (currentState === "start") {
+		startTimer()
+		showPauseTimerButton()
+	}
 })
