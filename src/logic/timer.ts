@@ -1,4 +1,4 @@
-import { timerDisplay } from "@/dom/elements"
+import { timerElements } from "@/dom/elements"
 import { nextPhase, timer } from "@/logic/cycle"
 import { updateTimerDisplay } from "@/utils/format"
 
@@ -19,7 +19,7 @@ export function startTimer() {
 				timer.seconds--
 			}
 
-			updateTimerDisplay(timerDisplay, timer.minutes, timer.seconds)
+			updateTimerDisplay(timerElements.display, timer.minutes, timer.seconds)
 		}, 1000)
 	}
 }
