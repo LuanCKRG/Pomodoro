@@ -1,14 +1,23 @@
 import { timerElements, cycleButtons } from "@/dom/elements"
 import { CyclePhase } from "@/types"
 
-export function showStopTimerButton() {
-	startTimerButton.classList.add("hidden")
-	pauseTimerButton.classList.remove("hidden")
+const startButtonClasses = ["border-b-6", "border-neutral-400"]
+const pauseButtonClasses = ["translate-y-1.5"]
+
+const { toggleButton } = timerElements
+
+export function showPauseTimerButton() {
+	toggleButton.dataset.state = "pause" // Atualiza o estado para pause
+	toggleButton.classList.remove(...startButtonClasses)
+	toggleButton.classList.add(...pauseButtonClasses)
+	toggleButton.innerText = "Pause"
 }
 
 export function showStartTimerButton() {
-	startTimerButton.classList.remove("hidden")
-	pauseTimerButton.classList.add("hidden")
+	toggleButton.dataset.state = "start" // Atualiza o estado para start
+	toggleButton.classList.remove(...pauseButtonClasses)
+	toggleButton.classList.add(...startButtonClasses)
+	toggleButton.innerText = "Start"
 }
 
 export function updateActiveCycleButton(currentCycle: CyclePhase) {
