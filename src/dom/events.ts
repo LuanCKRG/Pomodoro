@@ -9,10 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	setupIcons()
 })
 
-// modal.openButton.addEventListener("click", () => {
-// 	openModal()
-// })
-
 cycleButtons.pomodoro.addEventListener("click", () => {
 	handleCyclePhase(CyclePhase.pomodoro)
 })
