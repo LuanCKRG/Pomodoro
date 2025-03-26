@@ -34,3 +34,7 @@ timerElements.toggleButton.addEventListener("click", () => {
 		showPauseTimerButton()
 	}
 })
+
+// -------------* Modal *-------------
+configModal.openButton.addEventListener("click", () => toggleModal(true))
+configModal.closeButton.addEventListener("click", () => toggleModal(false))
