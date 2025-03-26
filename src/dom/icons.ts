@@ -1,10 +1,11 @@
-import { Settings, X, createIcons } from "lucide"
+import { Settings, X, createIcons, Clock } from "lucide"
 
 export const setupIcons = () => {
 	createIcons({
 		icons: {
 			Settings,
-			X
+			X,
+			Clock
 		}
 	})
 }
