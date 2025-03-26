@@ -1,4 +1,4 @@
-import { cycleButtons, timerElements, configModal } from "@/dom/elements"
+import { configModal, cycleButtons, timerElements } from "@/dom/elements"
 import { setupIcons } from "@/dom/icons"
 import { showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"

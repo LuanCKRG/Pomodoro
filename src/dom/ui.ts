@@ -1,4 +1,4 @@
-import { cycleButtons, timerElements, configModal } from "@/dom/elements"
+import { configModal, cycleButtons, timerElements } from "@/dom/elements"
 import { CyclePhase } from "@/types"
 
 const startButtonClasses = ["border-b-6", "border-neutral-400"]

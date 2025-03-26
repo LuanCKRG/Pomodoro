@@ -1,4 +1,4 @@
-import { Settings, X, createIcons, Clock } from "lucide"
+import { Clock, Settings, X, createIcons } from "lucide"
 
 export const setupIcons = () => {
 	createIcons({
