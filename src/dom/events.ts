@@ -38,3 +38,10 @@ timerElements.toggleButton.addEventListener("click", () => {
 // -------------* Modal *-------------
 configModal.openButton.addEventListener("click", () => toggleModal(true))
 configModal.closeButton.addEventListener("click", () => toggleModal(false))
+
+configModal.overlay.addEventListener("click", (e) => {
+	const target = e.target as HTMLElement
+	if (target.dataset.modal === "backdrop") {
+		toggleModal(false)
+	}
+})
