@@ -4,9 +4,10 @@ export const cycleButtons = {
 	longBreak: document.querySelector("#long-break") as HTMLButtonElement
 }
 
-export const modal = {
+export const configModal = {
+	overlay: document.querySelector("#modal-overlay") as HTMLElement,
 	openButton: document.querySelector("#open-config-modal") as HTMLButtonElement,
-	root: document.querySelector("#modal") as HTMLDivElement
+	closeButton: document.querySelector("#close-config-modal") as HTMLButtonElement
 }
 
 export const rootElement = document.documentElement as HTMLElement
