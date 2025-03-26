@@ -1,4 +1,4 @@
-import { timerElements, cycleButtons } from "@/dom/elements"
+import { cycleButtons, timerElements, configModal } from "@/dom/elements"
 import { CyclePhase } from "@/types"
 
 const startButtonClasses = ["border-b-6", "border-neutral-400"]
@@ -32,4 +32,9 @@ export function updateActiveCycleButton(currentCycle: CyclePhase) {
 	} else if (currentCycle === CyclePhase.longBreak) {
 		cycleButtons.longBreak.classList.add("active-cycle-button")
 	}
+}
+
+export function toggleModal(willOpen: boolean) {
+	configModal.overlay.classList.toggle("hidden", !willOpen)
+	document.body.style.overflow = willOpen ? "hidden" : "auto"
 }
