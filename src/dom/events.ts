@@ -45,3 +45,9 @@ configModal.overlay.addEventListener("click", (e) => {
 		toggleModal(false)
 	}
 })
+
+document.addEventListener("keydown", (e) => {
+	if (e.key === "Escape" && !configModal.overlay.classList.contains("hidden")) {
+		toggleModal(false)
+	}
+})
