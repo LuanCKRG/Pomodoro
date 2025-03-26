@@ -1,6 +1,6 @@
-import { cycleButtons, timerElements } from "@/dom/elements"
+import { cycleButtons, timerElements, configModal } from "@/dom/elements"
 import { setupIcons } from "@/dom/icons"
-import { showPauseTimerButton, showStartTimerButton } from "@/dom/ui"
+import { showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"
 import { startTimer, stopTimer } from "@/logic/timer"
 import { CyclePhase } from "@/types"
