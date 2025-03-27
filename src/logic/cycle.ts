@@ -4,16 +4,11 @@ import { showStartTimerButton, updateActiveCycleButton } from "@/dom/ui"
 import { stopTimer } from "@/logic/timer"
 import { CyclePhase, type TimerType } from "@/types"
 import { updateTimerDisplay } from "@/utils/format"
+import { phaseDurations } from "@/logic/phase-durations"
 
 export let currentCyclePhase: CyclePhase = CyclePhase.pomodoro
 export let pomodoroCount = 0
 export let shortBreakCount = 0
-
-const phaseDurations = {
-	[CyclePhase.pomodoro]: 25,
-	[CyclePhase.shortBreak]: 5,
-	[CyclePhase.longBreak]: 15
-}
 
 export const timer: TimerType = {
 	minutes: phaseDurations[CyclePhase.pomodoro],
