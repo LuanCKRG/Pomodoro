@@ -1,4 +1,5 @@
 import { configModal, cycleButtons, timerElements } from "@/dom/elements"
+import { phaseDurations } from "@/logic/phase-durations"
 import { CyclePhase } from "@/types"
 
 const startButtonClasses = ["border-b-6", "border-neutral-400"]
@@ -37,4 +38,10 @@ export function updateActiveCycleButton(currentCycle: CyclePhase) {
 export function toggleModal(willOpen: boolean) {
 	configModal.overlay.classList.toggle("hidden", !willOpen)
 	document.body.style.overflow = willOpen ? "hidden" : "auto"
+}
+
+export function setupDefaultValuesOnInputs() {
+	configModal.pomodoroValueInput.value = phaseDurations[CyclePhase.pomodoro].toString()
+	configModal.shortBreakvalueInput.value = phaseDurations[CyclePhase.shortBreak].toString()
+	configModal.longBreakValueInput.value = phaseDurations[CyclePhase.longBreak].toString()
 }
