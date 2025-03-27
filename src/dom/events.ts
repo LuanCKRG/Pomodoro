@@ -2,8 +2,10 @@ import { configModal, cycleButtons, timerElements } from "@/dom/elements"
 import { setupIcons } from "@/dom/icons"
 import { setupDefaultValuesOnInputs, showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"
+import { updatePhaseDurations } from "@/logic/phase-durations"
 import { startTimer, stopTimer } from "@/logic/timer"
 import { CyclePhase } from "@/types"
+import { getConfigInputValues } from "./inputs"
 
 document.addEventListener("DOMContentLoaded", () => {
 	setupIcons()
@@ -48,4 +50,9 @@ document.addEventListener("keydown", (e) => {
 	if (e.key === "Escape" && !configModal.overlay.classList.contains("hidden")) {
 		toggleModal(false)
 	}
+})
+
+configModal.submitConfigButton.addEventListener("click", () => {
+	const newPhaseDurations = getConfigInputValues()
+	updatePhaseDurations(newPhaseDurations)
 })
