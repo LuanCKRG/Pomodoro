@@ -1,12 +1,14 @@
 import { configModal, cycleButtons, timerElements } from "@/dom/elements"
 import { setupIcons } from "@/dom/icons"
-import { showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
+import { setupDefaultValuesOnInputs, showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"
 import { startTimer, stopTimer } from "@/logic/timer"
 import { CyclePhase } from "@/types"
 
 document.addEventListener("DOMContentLoaded", () => {
 	setupIcons()
+
+	setupDefaultValuesOnInputs()
 })
 
 cycleButtons.pomodoro.addEventListener("click", () => {
