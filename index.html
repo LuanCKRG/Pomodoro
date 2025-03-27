@@ -71,24 +71,24 @@
               <form class="flex gap-3 justify-between">
                 <label class="flex flex-col w-24 font-bold gap-y-1 text-sm">
                   Pomodoro
-                  <input type="text" class="flex w-full bg-[#EFEFEF] text-neutral-600 rounded-md p-2.5">
+                  <input id="pom-input" type="number" min="0" class="flex w-full bg-[#EFEFEF] text-neutral-600 rounded-md p-2.5">
                 </label>
 
                 <label class="flex flex-col w-24 font-bold gap-y-1 text-sm">
                   Short Break
-                  <input type="text" class="flex w-full bg-[#EFEFEF] text-neutral-600 rounded-md p-2.5">
+                  <input id="short-input" type="number" class="flex w-full bg-[#EFEFEF] text-neutral-600 rounded-md p-2.5">
                 </label>
                 
                 <label class="flex flex-col w-24 font-bold gap-y-1 text-sm">
                   Long Break
-                  <input type="text" class="flex w-full bg-[#EFEFEF] text-neutral-600 rounded-md p-2.5">
+                  <input id="long-input" type="number" class="flex w-full bg-[#EFEFEF] text-neutral-600 rounded-md p-2.5">
                 </label>
               </form>
             </div>
           </div>
           
           <div class="bg-[#EFEFEF] px-3.5 py-5 flex justify-end">
-            <button class="uppercase bg-neutral-800 py-2 w-20 text-sm text-neutral-50 rounded-md">Ok</button>
+            <button id="submit-config" type="button" class="uppercase bg-neutral-800 py-2 w-20 text-sm text-neutral-50 rounded-md">Ok</button>
           </div>
       </div>
     </div>
