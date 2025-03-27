@@ -1,10 +1,10 @@
 import { timerElements } from "@/dom/elements"
 import { handleTheme } from "@/dom/theme"
 import { showStartTimerButton, updateActiveCycleButton } from "@/dom/ui"
+import { phaseDurations } from "@/logic/phase-durations"
 import { stopTimer } from "@/logic/timer"
 import { CyclePhase, type TimerType } from "@/types"
 import { updateTimerDisplay } from "@/utils/format"
-import { phaseDurations } from "@/logic/phase-durations"
 
 export let currentCyclePhase: CyclePhase = CyclePhase.pomodoro
 export let pomodoroCount = 0
