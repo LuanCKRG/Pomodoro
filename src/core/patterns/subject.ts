@@ -1,5 +1,5 @@
-import type { Subject as SubjectInterface } from "../types/subject.interface"
-import type { Observer } from "../types/observer.interface"
+import type { Observer } from "@/core/types/observer.interface"
+import type { Subject as SubjectInterface } from "@/core/types/subject.interface"
 
 export class Subject<T> implements SubjectInterface<T> {
 	private observers: Observer<T>[] = []
