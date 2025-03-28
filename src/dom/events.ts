@@ -1,11 +1,11 @@
 import { configModal, cycleButtons, timerElements } from "@/dom/elements"
 import { setupIcons } from "@/dom/icons"
-import { setupDefaultValuesOnInputs, showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
+import { getConfigInputValues, setupDefaultValuesOnInputs } from "@/dom/inputs"
+import { showPauseTimerButton, showStartTimerButton, toggleModal } from "@/dom/ui"
 import { handleCyclePhase } from "@/logic/cycle"
 import { updatePhaseDurations } from "@/logic/phase-durations"
 import { startTimer, stopTimer } from "@/logic/timer"
 import { CyclePhase } from "@/types"
-import { getConfigInputValues } from "./inputs"
 
 document.addEventListener("DOMContentLoaded", () => {
 	setupIcons()
