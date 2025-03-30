@@ -16,7 +16,7 @@
 	--color-primary: #3b82f6;
 }
 
-.active-cycle-button {
+.active {
 	@apply bg-black/15 font-semibold rounded-sm;
 }
 

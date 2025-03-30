@@ -9,6 +9,20 @@
   </head>
 
   <body class="bg-primary text-neutral-50 px-3 duration-1000">
+    <div id="app" class="hidden">
+      <div id="session-type" class="session-type">Work</div>
+      <div class="progress">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+          
+      <div class="controls">
+        <button id="reset-btn" class="btn">🔄 Reset</button>
+      </div>
+    
+      <div id="pomodoro-count" class="counter">Pomodoros: 0</div>
+      <div id="next-session" class="next-session">Next: Short Break</div>
+    </div>
+    
     <header class="flex justify-center items-center">
       <h1 class="text-2xl">Pomodoro</h1>
       <div>
@@ -21,16 +35,16 @@
     <div class="max-w-[480px] mx-auto flex justify-center items-center rounded-xl mt-10 py-7.5 bg-white/10">
       <div class="flex flex-col items-center">
         <div class="">
-          <button class="px-3 text-lg active:translate-y-1 active-cycle-button" type="button" id="pomodoro">Pomo<span class="hidden sm:inline">doro</span></button>
-          <button class="px-3 text-lg active:translate-y-1" type="button" id="short-break">Short <span class="hidden sm:inline">Break</span></button>
-          <button class="px-3 text-lg active:translate-y-1" type="button" id="long-break">Long <span class="hidden sm:inline">Break</span></button>
+          <button class="px-3 text-lg active:translate-y-1 active" type="button" id="work-btn">Pomo<span class="hidden sm:inline">doro</span></button>
+          <button class="px-3 text-lg active:translate-y-1" type="button" id="short-break-btn">Short <span class="hidden sm:inline">Break</span></button>
+          <button class="px-3 text-lg active:translate-y-1" type="button" id="long-break-btn">Long <span class="hidden sm:inline">Break</span></button>
         </div>
         
         <time class="text-8xl font-semibold mx-auto mt-8 mb-12" id="timer-display">25:00</time>
 
         <button
           type="button"
-          id="toggle-timer"
+          id="play-pause-btn"
           data-state="start"
           class="h-12 sm:h-14 w-40 sm:w-52 bg-neutral-50 text-primary transition-[color] duration-1000 text-xl font-semibold uppercase rounded-md border-b-6 border-neutral-400"
         >
