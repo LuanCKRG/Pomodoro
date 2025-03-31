@@ -1,11 +1,23 @@
 import { Subject } from "@/core/patterns/subject"
 import type { Observer } from "@/core/types/observer.interface"
 import type { PomodoroState, SessionType } from "@/core/types/pomodoro-types"
+import { StorageService } from "@/services/storage-service"
+
+interface PomodoroSettings {
+	pomodoro: number
+	shortBreak: number
+	longBreak: number
+}
 
 export class PomodoroTimer {
 	private subject = new Subject<PomodoroState>()
 	private state: PomodoroState
 	private intervalId: number | null = null
+	private sessions = {
+		WORK: StorageService.getSettings().pomodoro * 60,
+		SHORT_BREAK: StorageService.getSettings().shortBreak * 60,
+		LONG_BREAK: StorageService.getSettings().longBreak * 60
+	}
 
 	constructor() {
 		this.state = this.createInitialState()
@@ -93,6 +105,17 @@ export class PomodoroTimer {
 
 	public addObserver(observer: Observer<PomodoroState>): void {
 		this.subject.addObserver(observer)
+	}
+
+	public updateSettings(settings: PomodoroSettings): void {
+		this.sessions.WORK = settings.pomodoro * 60
+		this.sessions.SHORT_BREAK = settings.shortBreak * 60
+		this.sessions.LONG_BREAK = settings.longBreak * 60
+
+		if (!this.state.isRunning) {
+			this.state.remainingTime = this.sessions[this.state.currentSession]
+			this.notifyStateChange()
+		}
 	}
 
 	private updateNextSession(): void {
