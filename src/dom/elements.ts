@@ -5,15 +5,16 @@ export const cycleButtons = {
 }
 
 export const configModal = {
-	overlay: document.querySelector("#modal-overlay") as HTMLElement,
-	openButton: document.querySelector("#open-config-modal") as HTMLButtonElement,
-	closeButton: document.querySelector("#close-config-modal") as HTMLButtonElement,
+	overlay: document.getElementById("modal-overlay") as HTMLDivElement,
+	modal: document.getElementById("modal") as HTMLDivElement,
 
-	pomodoroValueInput: document.querySelector("#pom-input") as HTMLInputElement,
-	shortBreakvalueInput: document.querySelector("#short-input") as HTMLInputElement,
-	longBreakValueInput: document.querySelector("#long-input") as HTMLInputElement,
+	openButton: document.getElementById("open-config-modal") as HTMLButtonElement,
+	closeButton: document.getElementById("close-config-modal") as HTMLButtonElement,
+	submitButton: document.getElementById("submit-config") as HTMLButtonElement,
 
-	submitConfigButton: document.querySelector("#submit-config") as HTMLButtonElement
+	pomodoroInput: document.getElementById("pom-input") as HTMLInputElement,
+	shortBreakInput: document.getElementById("short-input") as HTMLInputElement,
+	longBreakInput: document.getElementById("long-input") as HTMLInputElement
 }
 
 export const rootElement = document.documentElement as HTMLElement
