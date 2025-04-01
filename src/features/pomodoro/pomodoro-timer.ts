@@ -1,7 +1,6 @@
 import { Subject } from "@/core/patterns/subject"
 import type { Observer } from "@/core/types/observer.interface"
 import type { PomodoroState, SessionType } from "@/core/types/pomodoro-types"
-import { StorageService } from "@/services/storage-service"
 
 interface PomodoroSettings {
 	pomodoro: number
