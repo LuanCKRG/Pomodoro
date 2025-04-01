@@ -54,7 +54,7 @@ export class PomodoroTimer {
 		if (this.state.isRunning) return
 
 		this.state.currentSession = sessionType
-		this.state.remainingTime = this.state.sessions[sessionType]
+		this.state.remainingTime = this.sessions[sessionType]
 
 		if (sessionType === "WORK") {
 			this.state.pomodoroCount++
