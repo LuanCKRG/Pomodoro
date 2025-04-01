@@ -115,9 +115,14 @@ export class PomodoroTimer {
 	}
 
 	public updateSettings(settings: PomodoroSettings): void {
-		this.sessions.WORK = settings.pomodoro * 60
-		this.sessions.SHORT_BREAK = settings.shortBreak * 60
-		this.sessions.LONG_BREAK = settings.longBreak * 60
+		this.sessions = {
+			WORK: settings.pomodoro * 60,
+			SHORT_BREAK: settings.shortBreak * 60,
+			LONG_BREAK: settings.longBreak * 60
+		}
+
+		// Atualize o state.sessions também
+		this.state.sessions = this.sessions
 
 		if (!this.state.isRunning) {
 			this.state.remainingTime = this.sessions[this.state.currentSession]
