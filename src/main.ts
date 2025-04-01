@@ -51,6 +51,8 @@ class App {
 		this.timer.addObserver(this.displayController)
 		this.timer.addObserver(this.buttonController)
 
+		this.timer.notifyStateChange()
+
 		this.displayController.init()
 		this.buttonController.init()
 	}

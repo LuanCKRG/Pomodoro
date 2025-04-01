@@ -32,7 +32,6 @@ export class PomodoroTimer {
 		}
 
 		this.state = this.createInitialState()
-		this.notifyStateChange()
 	}
 
 	private createInitialState(): PomodoroState {
@@ -47,7 +46,7 @@ export class PomodoroTimer {
 	}
 
 	// Método modificado para notificar com o estado atual
-	private notifyStateChange(): void {
+	public notifyStateChange(): void {
 		this.subject.notifyObservers(this.state)
 	}
 
