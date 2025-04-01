@@ -30,7 +30,7 @@ export class DisplayController implements Observer<PomodoroState> {
 	}
 
 	private updateProgress(state: PomodoroState): void {
-		const totalTime = this.timer.getState().sessions[state.currentSession]
+		const totalTime = state.sessions[state.currentSession]
 		const percentage = ((totalTime - state.remainingTime) / totalTime) * 100
 		this.elements.progressBar.style.width = `${percentage}%`
 	}
