@@ -13,10 +13,10 @@ export class PomodoroTimer {
 	private subject = new Subject<PomodoroState>()
 	private state: PomodoroState
 	private intervalId: number | null = null
-	private sessions = {
-		WORK: StorageService.getSettings().pomodoro * 60,
-		SHORT_BREAK: StorageService.getSettings().shortBreak * 60,
-		LONG_BREAK: StorageService.getSettings().longBreak * 60
+	private sessions: {
+		WORK: number
+		SHORT_BREAK: number
+		LONG_BREAK: number
 	}
 
 	constructor(initialSettings?: PomodoroSettings) {
