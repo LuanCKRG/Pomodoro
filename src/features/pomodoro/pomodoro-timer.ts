@@ -19,22 +19,31 @@ export class PomodoroTimer {
 		LONG_BREAK: StorageService.getSettings().longBreak * 60
 	}
 
-	constructor() {
+	constructor(initialSettings?: PomodoroSettings) {
+		const defaults = {
+			WORK: 25 * 60,
+			SHORT_BREAK: 5 * 60,
+			LONG_BREAK: 15 * 60
+		}
+
+		this.sessions = {
+			WORK: initialSettings?.pomodoro ? initialSettings.pomodoro * 60 : defaults.WORK,
+			SHORT_BREAK: initialSettings?.shortBreak ? initialSettings.shortBreak * 60 : defaults.SHORT_BREAK,
+			LONG_BREAK: initialSettings?.longBreak ? initialSettings.longBreak * 60 : defaults.LONG_BREAK
+		}
+
 		this.state = this.createInitialState()
+		this.notifyStateChange()
 	}
 
 	private createInitialState(): PomodoroState {
 		return {
 			currentSession: "WORK",
 			nextSession: "SHORT_BREAK",
-			remainingTime: 25 * 60,
+			remainingTime: this.sessions.WORK,
 			isRunning: false,
 			pomodoroCount: 0,
-			sessions: {
-				WORK: 25 * 60,
-				SHORT_BREAK: 5 * 60,
-				LONG_BREAK: 15 * 60
-			}
+			sessions: this.sessions
 		}
 	}
 
