@@ -27,9 +27,9 @@ export class PomodoroTimer {
 		}
 
 		this.sessions = {
-			WORK: initialSettings?.pomodoro ? initialSettings.pomodoro * 60 : defaults.WORK,
-			SHORT_BREAK: initialSettings?.shortBreak ? initialSettings.shortBreak * 60 : defaults.SHORT_BREAK,
-			LONG_BREAK: initialSettings?.longBreak ? initialSettings.longBreak * 60 : defaults.LONG_BREAK
+			WORK: (initialSettings?.pomodoro || defaults.WORK / 60) * 60,
+			SHORT_BREAK: (initialSettings?.shortBreak || defaults.SHORT_BREAK / 60) * 60,
+			LONG_BREAK: (initialSettings?.longBreak || defaults.LONG_BREAK / 60) * 60
 		}
 
 		this.state = this.createInitialState()
